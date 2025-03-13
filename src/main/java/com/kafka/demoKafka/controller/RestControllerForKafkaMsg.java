@@ -11,10 +11,11 @@ import com.kafka.demoKafka.service.Producer;
 @RestController
 @RequestMapping("/rest/api")
 public class RestControllerForKafkaMsg {
-@Autowired
+    @Autowired
     Producer producer;
+
     @GetMapping("/producerMsg")
-    public void getMessageFromClient(@RequestParam("message")String message){
-     producer.sendMsgToTopic(message);
+    public void getMessageFromClient(@RequestParam("message") String message) {
+        producer.sendMsgToTopic(message);
     }
 }
